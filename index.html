@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="game-panel" aria-label="Tetris spel">
+        <div class="top-bar">
+          <div>
+            <p class="eyebrow">Retro arcade</p>
+            <h1>Tetris</h1>
+          </div>
+          <button id="menuButton" class="menu-button" type="button" aria-label="Menu openen">
+            Menu
+          </button>
+        </div>
+
+        <div class="game-layout">
+          <canvas id="gameCanvas" width="300" height="600" aria-label="Speelveld"></canvas>
+
+          <aside class="sidebar" aria-label="Spelstatus">
+            <div class="stat-box">
+              <span class="label">Score</span>
+              <strong id="scoreValue">0</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">High score</span>
+              <strong id="highScoreValue">0</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">Lijnen</span>
+              <strong id="linesValue">0</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">Level</span>
+              <strong id="levelValue">1</strong>
+            </div>
+
+            <div class="preview-box">
+              <span class="label">Volgende</span>
+              <canvas id="nextCanvas" width="120" height="120" aria-label="Volgende blok"></canvas>
+            </div>
+
+            <div class="controls-box">
+              <h2>Besturing</h2>
+              <ul>
+                <li><span>← / →</span> bewegen</li>
+                <li><span>↓</span> versnellen</li>
+                <li><span>↑ / Spatie</span> draaien</li>
+                <li><span>P</span> pauzeren</li>
+                <li><span>Esc</span> menu</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div id="menuOverlay" class="overlay visible" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
+      <div class="overlay-card">
+        <p class="eyebrow">Arcade menu</p>
+        <h2 id="menuTitle">Tetris</h2>
+
+        <div class="menu-actions" aria-label="Menu acties">
+          <button id="startButton" class="action-button primary" type="button">Start spel</button>
+          <button id="pauseButton" class="action-button" type="button">Pauzeren</button>
+          <button id="restartButton" class="action-button" type="button">Nieuw spel</button>
+        </div>
+
+        <p class="menu-hint">Gebruik muis of Enter/Spatie. Met pijltjes speel je het spel.</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
